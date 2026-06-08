@@ -692,3 +692,8 @@ body.dark-mode {
 .dark-mode .photo-desc {
   color: #ffffff;
 }
+.dark-mode .photo-desc {
+  color: #ffffff;
+  background: transparent;
+  border: none;
+}
