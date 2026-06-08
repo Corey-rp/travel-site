@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socials | Corey's Worldly Travels</title>
+  <link rel="icon" type="image/png" href="./img/plane_img.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .socials-section {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .socials-section h2 {
+      font-family: Georgia, serif;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .socials-section .subtitle {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    .social-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .social-card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    .social-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .social-icon {
+      font-size: 3rem;
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+    }
+
+    .social-icon.instagram {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .social-icon.tiktok {
+      background: #000000;
+    }
+
+    .social-info h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #1a1a1a;
+    }
+
+    .social-handle {
+      font-family: monospace;
+      font-size: 1rem;
+      color: #4b4b9c;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .social-info p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .social-btn {
+      margin-left: auto;
+      flex-shrink: 0;
+      background-color: #d2cff5;
+      font-family: monospace;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+      transition: background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .social-btn:hover {
+      background-color: #bdb8f0;
+    }
+
+    .back-wrap {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* Dark mode */
+    .dark-mode .socials-section .subtitle {
+      color: #b0b8cc;
+    }
+
+    .dark-mode .social-card {
+      background: rgba(20, 26, 40, 0.9);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .dark-mode .social-info h3 {
+      color: #e9eef7;
+    }
+
+    .dark-mode .social-handle {
+      color: #9ecbff;
+    }
+
+    .dark-mode .social-info p {
+      color: #94a3b8;
+    }
+
+    .dark-mode .social-btn {
+      background: #1a2842;
+      color: #e9eef7;
+    }
+
+    .dark-mode .social-btn:hover {
+      background: #213356;
+    }
+
+    @media (max-width: 600px) {
+      .social-card {
+        flex-wrap: wrap;
+      }
+      .social-btn {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <h1 id="pagename">Corey's Worldly Travels!</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#events">Upcoming Trips</a></li>
+        <button id="theme-button" class="theme-toggle" aria-pressed="false" title="Toggle dark mode">
+          🌙 Night
+        </button>
+      </ul>
+    </nav>
+    <div class="button-container">
+      <button onclick="window.location.href='map.html'">Map of Locations</button>
+      <button onclick="window.location.href='socials.html'">Socials</button>
+      <button onclick="window.open('https://avelconcierges.gumroad.com/l/btixi', '_blank')">
+        Personalized travel itinerary
+      </button>
+    </div>
+  </header>
+
+  <div class="socials-section">
+    <h2>Follow the Journey ✈️</h2>
+    <p class="subtitle">Stay up to date with our travels through photos and videos.</p>
+
+    <div class="social-cards">
+
+      <!-- Instagram -->
+      <div class="social-card">
+        <div class="social-icon instagram">📸</div>
+        <div class="social-info">
+          <h3>Instagram</h3>
+          <div class="social-handle">@corey_in_thy_house</div>
+          <p>Photos and moments from my travels around the world.</p>
+        </div>
+        <a href="https://www.instagram.com/corey_in_thy_house" target="_blank" class="social-btn">Follow →</a>
+      </div>
+
+      <!-- TikTok -->
+      <div class="social-card">
+        <div class="social-icon tiktok">🎵</div>
+        <div class="social-info">
+          <h3>TikTok</h3>
+          <div class="social-handle">@neasyavenue</div>
+          <p>Travel videos from our adventures — filmed and posted by my girlfriend.</p>
+        </div>
+        <a href="https://www.tiktok.com/@neasyavenue" target="_blank" class="social-btn">Follow →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="newsletter-footer">
+    <h2>Follow Along!</h2>
+    <a class="footer-link" href="https://forms.gle/cesQiAnSN6KFyuKP7" target="_blank" rel="noopener">
+      <h3>Join My Newsletter ✈️</h3>
+    </a>
+    <p>Get updates and behind-the-scenes stories from my travels!</p>
+  </footer>
+
+  <div class="sticky-footer">
+    <p>Thanks for visiting Corey's Worldly Travels! 🌍</p>
+    <p>Made with HTML, CSS, JavaScript.</p>
+  </div>
+
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      const btn = document.getElementById("theme-button");
+      if (btn) btn.textContent = "☀️ Day";
+    }
+
+    document.getElementById("theme-button").addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      this.textContent = isDark ? "☀️ Day" : "🌙 Night";
+    });
+  </script>
+
+</body>
+</html>
