@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Corey Worldly Travels</title>
+    <link rel="icon" type="image/png" href="./img/plane_img.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <h1 id="pagename">Corey's Worldly Travels!</h1>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#events">Upcoming Trips</a></li>
+          <button id="theme-button" class="theme-toggle" aria-pressed="false" title="Toggle dark mode">
+            🌙 Night
+          </button>
+        </ul>
+      </nav>
+
+      <div class="button-container">
+        <button onclick="window.location.href='map.html'">Map of Locations</button>
+        <button onclick="window.location.href='socials.html'">Socials</button>
+        <button onclick="window.open('https://avelconcierges.gumroad.com/l/btixi', '_blank')">
+          Personalized travel itinerary
+        </button>
+      </div>
+    </header>
+
+    <!-- INTRO SECTION -->
+    <section id="about" class="intro">
+      <h2>About Me</h2>
+      <p>
+        Hi! I’m Corey, a travel enthusiast who loves exploring new cultures, cuisines, and cities.
+        Join me as I share stories from my adventures across the world.
+      </p>
+    </section>
+
+    <!-- PHOTO SECTION -->
+    <div class="header-pictures">
+      <div class="photo-item">
+        <img src="./img/couple_amsterdam.jpeg" alt="Couple walking through Amsterdam" class="hero-photo">
+        <p class="photo-desc">My girlfriend and I watching the sunset over the Amsterdam canals.</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="./img/couple_korea.jpeg" alt="Couple wearing traditional Hanbok in Seoul" class="hero-photo">
+        <p class="photo-desc">Exploring Seoul in Hanbok — embracing the culture while in the culture.</p>
+      </div>
+    </div>
+
+    <main class="container">
+      <section id="about" class="quote-section">
+        <h2>Quote I Stand By</h2>
+        <p class="quote">“The world is a book, and those who do not travel read only one page.” <br> – St. Augustine</p>
+      </section>
+    </main>
+
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/3cB57ObqV4s"
+        title="Nara Park"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- EVENT SECTION -->
+    <section id="events" class="events-section">
+      <h2 class="event-title">Trips</h2>
+
+      <div class="event-container">
+        <!-- PAST trip -->
+        <article class="event">
+          <span class="status-chip is-past" aria-label="Previous trip">Previous Trip</span>
+          <h3>A Tokyo Thanksgiving <br> 🇯🇵</h3>
+          <p>
+            I returned to Japan this November for a couple of days to reconnect with old favorites.
+            I spent Thanksgiving in Tokyo with my girlfriend and her family, exploring the city and
+            indulging in a variety of delicious foods.
+          </p>
+        </article>
+
+        <!-- UPCOMING trip -->
+        <article class="event">
+          <span class="status-chip is-upcoming" aria-label="Upcoming trip">Upcoming Trip</span>
+          <h3>A Winter Getaway to Poland <br> 🇵🇱</h3>
+          <p>
+            I’ll be visiting Poland this winter for a short trip to spend time with extended family.
+            Even though it’s just a couple of days, I’m excited to explore a bit of Warsaw and enjoy
+            authentic Polish dishes. It’s sure to be a cozy and memorable winter getaway.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- RSVP SECTION -->
+    <section id="rsvp">
+      <h2 class="event-title">World Through My Lens 📷</h2>
+      <p id="rsvp-count">⭐ 3 people have RSVP’d to this event!</p>
+
+      <div class="rsvp-container">
+        <div class="rsvp-para">
+          <p>
+            Got a photo that captures the magic of your travels? Submit it below and join my monthly 
+            <strong>World Through My Lens</strong> challenge!
+            Each month, I’ll spotlight a few of my favorite submissions.
+          </p>
+
+          <form id="rsvp-form" autocomplete="off">
+            <label>
+              Name
+              <input id="rsvp-name" type="text" placeholder="e.g., John Doe" required />
+            </label>
+
+            <label>
+              Location of Photo
+              <input id="rsvp-place" type="text" placeholder="e.g., Lisbon, Portugal" />
+            </label>
+
+            <label>
+              Photo URL (optional)
+              <input id="rsvp-photo" type="url" placeholder="Paste your photo link (Instagram, Flickr, etc.)" />
+            </label>
+
+            <label>
+              Caption or Story
+              <textarea id="rsvp-message" rows="3" placeholder="Describe the moment behind your photo..."></textarea>
+            </label>
+
+            <button type="submit" id="rsvp-button">Submit Photo</button>
+          </form>
+        </div>
+
+        <div class="rsvp-participants">
+          <h3>Recent Submissions</h3>
+          <ul id="rsvp-list">
+            <li>🌅 DJ from Texas — “Golden hour in Santorini.”</li>
+            <li>🌇 Amy from New York — “Neon dreams in Tokyo.”</li>
+            <li>🏔️ Teresa from Montana — “Peace in the Alps.”</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUCCESS MODAL (with local GIF) -->
+    <div id="success-modal" class="modal">
+      <div class="modal-container">
+
+        <p id="modal-text"></p>
+
+        <img
+          id="modal-img"
+          src="./img/plane gif.gif"
+          alt="Plane animation"
+          class="modal-img"
+        />
+
+      </div>
+    </div>
+
+    <footer class="newsletter-footer">
+      <h2>Follow Along!</h2>
+      <a class="footer-link" href="https://forms.gle/cesQiAnSN6KFyuKP7" target="_blank" rel="noopener">
+        <h3>Join My Newsletter ✈️</h3>
+      </a>
+      <p>Get updates and behind-the-scenes stories from my travels!</p>
+    </footer>
+
+    <div class="sticky-footer">
+      <p>Thanks for visiting Corey’s Worldly Travels! 🌍</p>
+      <p>Made with HTML, CSS, JavaScript.</p>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
