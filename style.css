@@ -189,8 +189,3 @@ p {
 .dark-mode .projects .card {
   background-color: #1e1e1e;
 }
-
-/* Dark mode caption fix */
-.dark-mode .photo-desc {
-  color: #ffffff;
-}
