@@ -18,25 +18,20 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  padding-bottom: 80px; /* prevent sticky footer overlap */
+  padding-bottom: 80px;
 }
 
 /******************************
  * 2) HEADER / NAV
  ******************************/
 .topbar {
-  position: relative; /* allows absolute positioning inside */
+  position: relative;
   display: flex;
-  flex-direction: column; /* stack title and nav vertically */
+  flex-direction: column;
   align-items: center;
   gap: 10px;
   padding: 20px;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0.5)
-  );
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -44,7 +39,6 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Dark-mode toggle button in header */
 #theme-button {
   position: absolute;
   top: 20px;
@@ -152,11 +146,10 @@ button:active {
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  flex-wrap: wrap; /* stacks on smaller screens */
+  flex-wrap: wrap;
   margin-top: 30px;
 }
 
-/* Each picture + caption block */
 .photo-item {
   display: flex;
   flex-direction: column;
@@ -164,16 +157,14 @@ button:active {
   width: 380px;
 }
 
-/* Image styling */
 .hero-photo {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transition: none; /* prevents hover floating/zoom */
+  transition: none;
 }
 
-/* Description under each photo */
 .photo-desc {
   text-align: center;
   font-style: italic;
@@ -215,7 +206,7 @@ button:active {
   display: flex;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap; /* stack on small screens */
+  flex-wrap: wrap;
 }
 
 .event {
@@ -240,7 +231,6 @@ button:active {
   line-height: 1.6;
 }
 
-/* status chips for previous / upcoming trips */
 .status-chip {
   position: absolute;
   top: -15px;
@@ -326,7 +316,6 @@ button:active {
   text-decoration: underline;
 }
 
-/* Sticky footer (always visible) */
 .sticky-footer {
   position: fixed;
   bottom: 0;
@@ -466,7 +455,6 @@ button:active {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-/* All dark-mode base text */
 .dark-mode {
   color: #e9eef7;
 }
@@ -482,18 +470,12 @@ body.dark-mode {
   color: #e9eef7;
 }
 
-/* header/top bar glass */
 .dark-mode .topbar {
-  background: linear-gradient(
-    to bottom,
-    rgba(16, 22, 34, 0.78),
-    rgba(16, 22, 34, 0.55)
-  );
+  background: linear-gradient(to bottom, rgba(16, 22, 34, 0.78), rgba(16, 22, 34, 0.55));
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
-/* links */
 .dark-mode a {
   color: #9ecbff;
 }
@@ -506,7 +488,6 @@ body.dark-mode {
   color: #b9dcff;
 }
 
-/* cards / panels (events, etc.) */
 .dark-mode .event {
   background: rgba(30, 40, 60, 0.95);
   color: #e9eef7;
@@ -514,45 +495,70 @@ body.dark-mode {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* ensure trip text is bright */
 .dark-mode .event,
 .dark-mode .event h3,
-.dark-mode .event p,
-.dark-mode .status-chip {
+.dark-mode .event p {
   color: #ffffff !important;
 }
 
-/* photo shadows a touch cooler */
+.dark-mode .status-chip {
+  background-color: #1e2a3a;
+  color: #e9eef7;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .status-chip.is-past {
+  background-color: #2a2a4a;
+  color: #a0a0ff;
+}
+
+.dark-mode .status-chip.is-upcoming {
+  background-color: #0d2e1e;
+  color: #4dcc8a;
+}
+
 .dark-mode .hero-photo {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
-/* quote block */
+.dark-mode .photo-desc {
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
 .dark-mode .quote-section h2,
 .dark-mode .quote-section h3,
 .dark-mode .quote {
   color: #dfe7f4;
 }
 
-/* newsletter footer */
 .dark-mode .newsletter-footer {
   background: rgba(16, 21, 34, 0.92);
   color: #e9eef7;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.dark-mode .newsletter-footer h2,
+.dark-mode .newsletter-footer p {
+  color: #e9eef7;
+}
+
+.dark-mode .newsletter-footer h3 {
+  color: #b39ddb;
+}
+
 .dark-mode .footer-link:hover h3 {
   text-decoration: underline;
 }
 
-/* sticky footer */
 .dark-mode .sticky-footer {
   background: rgba(16, 21, 34, 0.92);
   color: #e9eef7;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* global buttons in dark mode */
 .dark-mode button {
   background: #1a2842;
   color: #e9eef7;
@@ -562,7 +568,6 @@ body.dark-mode {
   background: #213356;
 }
 
-/* RSVP dark-mode tweaks */
 .dark-mode #rsvp {
   background: rgba(20, 26, 40, 0.9);
   color: #e9eef7;
@@ -584,14 +589,12 @@ body.dark-mode {
   background: rgba(24, 30, 46, 0.9);
 }
 
-/* RSVP text labels in dark mode */
 .dark-mode .rsvp-para label,
 .dark-mode .rsvp-para p,
 .dark-mode .rsvp-para h3 {
   color: #ffffff !important;
 }
 
-/* form inputs & placeholders in dark mode */
 .dark-mode input,
 .dark-mode textarea,
 .dark-mode select {
@@ -614,8 +617,8 @@ body.dark-mode {
  * 13) FORM ERROR STYLING
  ******************************/
 .error {
-  border: 2px solid #e63946 !important; /* red border */
-  background-color: rgba(230, 57, 70, 0.1); /* soft pink background */
+  border: 2px solid #e63946 !important;
+  background-color: rgba(230, 57, 70, 0.1);
   transition: 0.3s;
 }
 
@@ -628,43 +631,29 @@ body.dark-mode {
  * 14) SUCCESS MODAL
  ******************************/
 .modal {
-  /* hidden by default */
   display: none;
-
-  /* lock it to the viewport */
   position: fixed;
   z-index: 2000;
-
-  /* fill the entire screen */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-
-  /* shadow background behind modal */
   background-color: rgba(0, 0, 0, 0.4);
-
-  /* center the modal content */
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* card in the middle of the screen */
 .modal-container {
   padding: 40px;
   width: min(90%, 480px);
-
   background-color: #f7f3ff;
   color: #222;
-
   text-align: center;
   font-size: 1rem;
   font-family: monospace;
-
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -676,24 +665,15 @@ body.dark-mode {
   border-radius: 12px;
 }
 
-/* dark-mode version of the modal */
 .dark-mode .modal-container {
   background-color: #141a28;
   color: #e9eef7;
 }
-#modal-img {
-  width: 160px;      /* adjust as you want */
-  height: 160px;
-  object-fit: cover;     /* this crops the GIF */
-  object-position: center; /* keeps the plane centered */
-  border-radius: 10px; /* optional: rounded edges */
-}
 
-.dark-mode .photo-desc {
-  color: #ffffff;
-}
-.dark-mode .photo-desc {
-  color: #ffffff;
-  background: transparent;
-  border: none;
+#modal-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
 }
