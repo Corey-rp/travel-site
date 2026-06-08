@@ -689,4 +689,6 @@ body.dark-mode {
   border-radius: 10px; /* optional: rounded edges */
 }
 
-
+.dark-mode .photo-desc {
+  color: #ffffff;
+}
