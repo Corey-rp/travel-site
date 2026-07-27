@@ -189,6 +189,42 @@
       border: none;
       background: none;
       padding: 0;
+      cursor: zoom-in;
+    }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+    .lightbox-overlay.open { display: flex; }
+
+    .lightbox-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2.2rem;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
     }
   </style>
 </head>
@@ -227,6 +263,12 @@
         <div class="photo-grid" id="modal-photos"></div>
       </div>
     </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox-overlay">
+    <button class="lightbox-close" onclick="event.stopPropagation(); document.getElementById('lightbox-overlay').classList.remove('open')">×</button>
+    <img id="lightbox-img" src="" alt="">
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -476,6 +518,7 @@
           img.src = loc.photos[i];
           img.alt = loc.name;
           slot.appendChild(img);
+          slot.addEventListener('click', () => openLightbox(loc.photos[i], loc.name));
         } else {
           slot.className = 'photo-slot';
           slot.textContent = 'Photos coming soon';
@@ -489,6 +532,20 @@
         c.classList.toggle('active', i === index);
       });
     }
+
+    function openLightbox(src, alt) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = alt;
+      document.getElementById('lightbox-overlay').classList.add('open');
+    }
+
+    document.getElementById('lightbox-overlay').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') document.getElementById('lightbox-overlay').classList.remove('open');
+    });
 
     function closeModal(e) { // kept for compat
       if (e.target === document.getElementById('modal-overlay')) {
